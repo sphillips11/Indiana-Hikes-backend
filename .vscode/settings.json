@@ -1,0 +1,11 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#103424",
+        "titleBar.activeBackground": "#164932",
+        "titleBar.activeForeground": "#F5FCF9"
+    },
+    "cSpell.words": [
+        "ASGI",
+        "obyzix"
+    ]
+}
