@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'indiana_hikes_development',
         'USER': 'postgres',
-        'PASSWORD': str(os.getenv('SECRET_KEY')),
+        'PASSWORD': str(os.getenv('DATABASE_PASSWORD')),
         'HOST': 'localhost',
         'PORT': '',
         
