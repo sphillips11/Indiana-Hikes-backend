@@ -1,1 +1,1 @@
-web: gunicorn indiana_hikes_backend.wsgi
+web: gunicorn indiana_hikes.wsgi
