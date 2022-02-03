@@ -1,0 +1,1 @@
+web: gunicorn ih_backend.wsgi
