@@ -1,1 +1,1 @@
-web: gunicorn ih_backend.wsgi
+web: gunicorn ih-backend.wsgi
