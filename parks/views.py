@@ -1,18 +1,19 @@
 from .models import Park
 from .serializers import ParkSerializer
 from rest_framework.generics import ListAPIView, RetrieveAPIView
-from django.http import JsonResponse
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 class ParkListView(ListAPIView):
     serializer_class = ParkSerializer
     queryset = Park.objects.all()
-
 
 class ParkDetailView(RetrieveAPIView):
     serializer_class = ParkSerializer
     queryset = Park.objects.all()
     lookup_field = 'slug'
 
+@api_view(['GET'])
 def map_view(request, slug, *args, **kwargs):
     data = {
         'slug': slug
@@ -24,4 +25,4 @@ def map_view(request, slug, *args, **kwargs):
     except:
         data['message'] = 'Not found'
         status = 404
-    return JsonResponse(data, status=status)
+    return Response(data, status=status)
