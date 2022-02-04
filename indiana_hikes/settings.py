@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['ih-backend.herokuapp.com']
 
-CORS_ORIGIN_WHITELIST = [
+CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
 ]
 
