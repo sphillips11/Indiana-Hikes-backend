@@ -30,7 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ih-backend.herokuapp.com', 'http://localhost:3000']
+ALLOWED_HOSTS = ['ih-backend.herokuapp.com']
+
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000']
 
 
 # Application definition
