@@ -43,4 +43,4 @@ class Trail (models.Model):
     accessible = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name (self.park_id)
+        return self.name
