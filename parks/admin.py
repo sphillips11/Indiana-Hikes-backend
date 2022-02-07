@@ -4,4 +4,5 @@ from .models import Park, Trail
 class ParkAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
-admin.site.register(Park, ParkAdmin, Trail)
+admin.site.register(Park, ParkAdmin)
+admin.site.register(Trail)
