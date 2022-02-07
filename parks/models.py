@@ -33,4 +33,14 @@ class Park(models.Model):
     
     def get_absolute_url(self):
         return reverse('park_detail', kwargs={'slug': self.slug})
-    
+
+class Trail (models.Model):
+    name = models.CharField(max_length=100)
+    park_id = models.ForeignKey(Park, on_delete=models.CASCADE)
+    distance = models.CharField(max_length=7, blank=True)
+    rating = models.CharField(max_length=50)
+    description = models.TextField(blank=True)
+    accessible = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name (self.park_id)
