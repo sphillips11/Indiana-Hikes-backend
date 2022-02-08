@@ -1,5 +1,5 @@
-from .models import Park
-from .serializers import ParkSerializer
+from .models import Park, Trail
+from .serializers import ParkSerializer, TrailSerializer
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -26,3 +26,10 @@ def map_view(request, slug, *args, **kwargs):
         data['message'] = 'Not found'
         status = 404
     return Response(data, status=status)
+
+class TrailListView(ListAPIView):
+    serializer_class = TrailSerializer
+    
+    def get_queryset(self):
+        park_id = self.kwargs['park_id']
+        return Trail.objects.filter(park_id=park_id)
