@@ -1,15 +1,15 @@
 from .models import Park, Trail
-from .serializers import ParkSerializer, TrailSerializer
+from .serializers import ParkListSerializer, ParkDetailSerializer, TrailSerializer
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 class ParkListView(ListAPIView):
-    serializer_class = ParkSerializer
+    serializer_class = ParkListSerializer
     queryset = Park.objects.all()
 
 class ParkDetailView(RetrieveAPIView):
-    serializer_class = ParkSerializer
+    serializer_class = ParkDetailSerializer
     queryset = Park.objects.all()
     lookup_field = 'slug'
 
