@@ -18,7 +18,6 @@ class Hike(models.Model):
     distance = models.DecimalField(max_digits=4, decimal_places=1, blank=True)
     notes = models.TextField(blank=True)
     trails = models.ManyToManyField(Trail)
-    test = models.DateField(blank=True, null=True)
 
     class Meta:
         constraints = [models.UniqueConstraint(fields=['hiker_id', 'park_id', 'date'], name='unique_hike')]
