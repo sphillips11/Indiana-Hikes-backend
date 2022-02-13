@@ -13,4 +13,4 @@ class HikeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Hike
-        fields = ['__all__']
+        fields = ['id', 'hiker_id', 'park_id', 'date', 'distance', 'notes', 'trails']
