@@ -11,7 +11,17 @@ class ParkDetailSerializer(serializers.ModelSerializer):
         model = Park
         fields = '__all__'
 
+class ParkNameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Park
+        fields = ['id', 'name']
+
 class TrailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Trail
         fields = '__all__'
+
+class TrailSummarySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Trail
+        fields = ['id', 'name', 'rating']
