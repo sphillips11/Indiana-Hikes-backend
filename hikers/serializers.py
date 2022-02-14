@@ -8,7 +8,7 @@ class HikerSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'email', 'username', 'registered']
 
 class HikeSerializer(serializers.ModelSerializer):
-    park_id = ParkNameSerializer
+    park_id = ParkNameSerializer(many=False)
     trails = TrailSummarySerializer(many=True)
 
     class Meta:
