@@ -2,10 +2,9 @@ from django.db import models
 from parks.models import Park, Trail
 
 class Hiker(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100, unique=True)
-    username = models.CharField(max_length=100, unique=True)
-    password = models.CharField(max_length=20)
     registered = models.DateField(auto_now_add=True)
     
     def __str__(self):

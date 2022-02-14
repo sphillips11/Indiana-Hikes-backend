@@ -5,7 +5,7 @@ from .models import Hiker, Hike
 class HikerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hiker
-        fields = ['id', 'name', 'email', 'username', 'registered']
+        fields = ['id', 'name', 'email', 'registered']
 
 class HikeSerializer(serializers.ModelSerializer):
     park_id = ParkNameSerializer(many=False)
