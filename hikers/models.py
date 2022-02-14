@@ -22,4 +22,4 @@ class Hike(models.Model):
         constraints = [models.UniqueConstraint(fields=['hiker_id', 'park_id', 'date'], name='unique_hike')]
 
     def __str__(self):
-        return '%s %s %s' % (self.hiker_id.username, self.park_id.name, self.date)
+        return '%s %s %s' % (self.hiker_id.name, self.park_id.name, self.date)
