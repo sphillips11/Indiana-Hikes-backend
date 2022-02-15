@@ -14,3 +14,10 @@ class HikeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hike
         fields = ['id', 'hiker_id', 'park_id', 'date', 'distance', 'notes', 'trails']
+
+class TrailsByParkHikerSerializer(serializers.ModelSerializer):
+    trails = TrailSummarySerializer(many=True)
+    
+    class Meta:
+        model = Hike
+        fields = ['trails']
