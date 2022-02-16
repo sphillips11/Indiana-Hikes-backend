@@ -15,13 +15,18 @@ class HikerView(RetrieveUpdateDestroyAPIView):
 
 class HikesView(ListCreateAPIView):
     serializer_class = HikeSerializer
-    queryset = Hike.objects.all()
-    lookup_field = 'hiker_id'
+
+    def get_queryset(self):
+        hiker_id = self.kwargs['hiker_id']
+        return Hike.objects.filter(hiker_id=hiker_id)
 
 class HikeView(RetrieveUpdateDestroyAPIView):
     serializer_class = HikeSerializer
-    queryset = Hike.objects.all()
-    lookup_field = 'id'
+
+    def get_queryset(self):
+        hiker_id = self.kwargs['hiker_id']
+        id = self.kwargs['id']
+        return Hike.objects.filter(hiker_id=hiker_id, id=id)
 
 class TrailsByParkHikerView(ListAPIView):
     serializer_class = TrailsByParkHikerSerializer
