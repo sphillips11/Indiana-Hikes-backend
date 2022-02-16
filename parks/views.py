@@ -1,5 +1,6 @@
+from hikers import serializers
 from .models import Park, Trail
-from .serializers import ParkListSerializer, ParkDetailSerializer, TrailSerializer
+from .serializers import ParkListSerializer, ParkDetailSerializer, ParkNameSerializer, TrailSerializer
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -33,3 +34,7 @@ class TrailListView(ListAPIView):
     def get_queryset(self):
         park_id = self.kwargs['park_id']
         return Trail.objects.filter(park_id=park_id)
+
+class ParkNameView(ListAPIView):
+    serializer_class = ParkNameSerializer
+    queryset = Park.objects.all()
